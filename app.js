@@ -21,7 +21,7 @@ window.addEventListener('load', ()=> {
             long = position.coords.longitude
             lat = position.coords.latitude
 
-            const api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=8ba28e65f455b912160f9e950ce10bc4`;
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=8ba28e65f455b912160f9e950ce10bc4`;
 
             fetch(api)
                 .then(response =>{
