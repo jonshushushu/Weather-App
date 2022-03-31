@@ -1,11 +1,11 @@
 window.addEventListener('load', ()=> {
     let long;
     let lat;
-    let temperatureDescription = document.querySelector('.temperature-description');
+    let temperatureText = document.querySelector('.temperature-text');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationTimezone = document.querySelector('.location-timezone');
-    let button = document.querySelector('.button')
-    const temperatureSpan = document.querySelector('.temperature span')
+    let button = document.querySelector('.button');
+    const temperatureSpan = document.querySelector('.temperature span');
 
     var map = new Map()
         .set('Clouds', Skycons.CLOUDY)
@@ -34,7 +34,7 @@ window.addEventListener('load', ()=> {
                     const timeZone = data.name
                     //set HTML elements
                     temperatureDegree.textContent = temp;
-                    temperatureDescription.textContent = des;
+                    temperatureText.textContent = des;
                     locationTimezone.textContent = timeZone
                     //formula for celsius
                     let celsius = (temp - 32) * (5 / 9);
@@ -57,7 +57,7 @@ window.addEventListener('load', ()=> {
         
     }
     else{
-        h1.textContent = "Turn on your location dummy"
+        temperatureDescription.textContent = "Turn on your location dummy"
     }
     
     function setIcon(icon, iconID) {
