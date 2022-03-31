@@ -4,7 +4,7 @@ window.addEventListener('load', ()=> {
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationTimezone = document.querySelector('.location-timezone');
-    let temperatureSection = document.querySelector('.temperature')
+    let button = document.querySelector('.button')
     const temperatureSpan = document.querySelector('.temperature span')
 
     var map = new Map()
@@ -21,7 +21,7 @@ window.addEventListener('load', ()=> {
             long = position.coords.longitude
             lat = position.coords.latitude
 
-            const api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=8ba28e65f455b912160f9e950ce10bc4`;
+            const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=8ba28e65f455b912160f9e950ce10bc4`;
 
             fetch(api)
                 .then(response =>{
@@ -41,7 +41,7 @@ window.addEventListener('load', ()=> {
                     // set icon
                     setIcon(des, document.querySelector('.icon'));
                     //change temp to celsius/farenheit
-                    temperatureSection.addEventListener('click', () => {
+                    button.addEventListener('click', () => {
                         if(temperatureSpan.textContent === 'F'){
                             temperatureSpan.textContent = 'C';
                             temperatureDegree.textContent = Math.floor(celsius)
@@ -56,8 +56,6 @@ window.addEventListener('load', ()=> {
 
         
     }
-
-
     else{
         h1.textContent = "Turn on your location dummy"
     }
